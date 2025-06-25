@@ -6,7 +6,7 @@
     <meta name="description" content="Innovatech Solutions: Leader nello sviluppo di soluzioni tecnologiche all'avanguardia per un futuro migliore. Esplora i nostri prodotti e servizi innovativi.">
     <meta name="keywords" content="Innovatech Solutions, tecnologia, innovazione, soluzioni, prodotti, servizi, azienda, qualità, futuro, ricerca e sviluppo">
     <meta name="author" content="Innovatech Solutions Team">
-    <title>Innovatech Solutions - Soluzioni Tecnologiche Innovative per il Futuro</title>
+    <title> Innovatech Solutions - Soluzioni Tecnologiche Innovative per il Futuro</title>
     
     <link rel="stylesheet" href="style.css">
     
@@ -17,7 +17,9 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo-link">
-                <h1>Innovatech Solutions</h1> 
+                <div style="width: fit-content; margin: 0 auto;">
+                    <h1>Innovatech Solutions</h1>
+                </div>
             </a>
             <nav class="search-bar" aria-label="Ricerca nel sito">
                 <label for="searchInput" class="sr-only">Cerca prodotti o soluzioni</label>
@@ -31,18 +33,21 @@
                 <li><a href="#products">Prodotti</a></li>
                 <li><a href="#services">Servizi</a></li>
                 <li><a href="#contact">Contatti</a></li>
+                <li></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero" aria-labelledby="heroHeading">
+        <section id="products" aria-labelledby="productsHeading">
             <h2 id="heroHeading">Il Futuro Inizia Qui. Innovazione al Tuo Servizio.</h2>
             <p>Siamo leader nello sviluppo di tecnologie all'avanguardia, creando soluzioni che ridefiniscono gli standard del settore e migliorano la vita di ogni giorno.</p>
             
-            <button type="button" id="exploreProductsButton" aria-live="polite">Esplora i Nostri Prodotti</button>
-        </section>
-
+            <div style="text-align: center;">
+              <button type="button" class="btn-secondary" style="display: inline-block;">Esplora i Nostri Prodotti</button>
+            </div>
+        </section>      
+      
         <section id="about" aria-labelledby="aboutHeading">
             <h2 id="aboutHeading">Chi Siamo</h2>
             <p><strong>Innovatech Solutions</strong> è un pioniere nel campo delle soluzioni tecnologiche. Con decenni di esperienza e un team di ingegneri e designer visionari, ci dedichiamo alla ricerca e sviluppo per offrire prodotti che non solo soddisfano, ma anticipano le esigenze del mercato globale. La nostra missione è semplice: trasformare idee complesse in realtà accessibili e funzionali per tutti.</p>
@@ -109,6 +114,10 @@
         <p><a href="#">Informativa sulla Privacy</a> | <a href="#">Termini di Servizio</a></p>
     </footer>
 
+    <script src="script.js" defer></script>
+
+</body>
+</html>
     <script src="script.js" defer></script>
 
 </body>
