@@ -1,0 +1,135 @@
+/* --- Stili Generali --- */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Ho aggiunto un font più comune, se lo colleghi */
+    margin: 0; /* Rimuovi margini predefiniti del body */
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* --- Header e Contenuto Header --- */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Utilizzo Flexbox per allineare contenuto e barra */
+    justify-content: center; /* Centra il contenuto principale dell'header */
+    align-items: center;
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo su schermi piccoli */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Spazia titolo e barra di ricerca */
+    align-items: center;
+    width: 100%; /* Occupa tutta la larghezza dell'header */
+    max-width: 1200px; /* Larghezza massima per il contenuto */
+    padding: 0 20px; /* Padding laterale */
+    box-sizing: border-box; /* Include padding nel calcolo della larghezza */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    flex-shrink: 0; /* Impedisce al titolo di restringersi */
+    padding-right: 20px; /* Spazio tra titolo e barra di ricerca */
+}
+
+/* --- Stili Barra di Ricerca --- */
+.search-bar {
+    display: flex;
+    gap: 10px; /* Spazio tra input e bottone */
+    align-items: center;
+    max-width: 400px; /* Larghezza massima per la barra di ricerca */
+    width: 100%; /* Occupa la larghezza disponibile */
+    flex-grow: 1; /* Permette alla barra di occupare spazio */
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1; /* L'input occupa lo spazio rimanente */
+    padding: 10px 15px;
+    border: 1px solid #003d80;
+    border-radius: 25px; /* Angoli arrotondati */
+    font-size: 1em;
+    outline: none; /* Rimuove il bordo blu al focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Ombra al focus */
+}
+
+.search-bar button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Angoli arrotondati */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    white-space: nowrap; /* Impedisce al testo del pulsante di andare a capo */
+}
+
+.search-bar button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px); /* Piccolo effetto al passaggio del mouse */
+}
+
+/* --- Stili Main Content --- */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    padding: 20px 0;
+}
+
+p#dynamicMessage { /* Stile specifico per il paragrafo dinamico */
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* --- Stili Pulsante Interattivo (come prima) --- */
+button#toggleButton { /* ID specifico per non confonderlo con il pulsante di ricerca */
+    background-color: #28a745; /* Un colore diverso per distinguere i pulsanti */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button#toggleButton:hover {
+    background-color: #218838;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
