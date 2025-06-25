@@ -1,353 +1,67 @@
-/* --- Reset di Base e Font --- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+// --- Script per il pulsante "Esplora i Nostri Prodotti" ---
+// Otteniamo un riferimento al pulsante principale
+const exploreProductsButton = document.getElementById('exploreProductsButton');
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif; /* Font per il corpo del testo */
-    background-color: #f8f9fa; /* Colore di sfondo leggero */
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth; /* Per uno scorrimento fluido alle ancore */
-}
+// Otteniamo un riferimento al paragrafo dinamico nella sezione hero
+const dynamicMessageParagraph = document.getElementById('hero').querySelector('p'); // Seleziona il paragrafo all'interno della sezione hero
 
-/* --- Classe per Screen Reader Only (Accessibilità) --- */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
+// Variabile per tenere traccia dello stato del testo
+let isOriginalText = true;
 
-/* --- Header e Contenuto Header --- */
-header {
-    background-color: #0056b3; /* Blu scuro per l'header */
-    color: white;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Ombra leggera per profondità */
-    display: flex;
-    flex-direction: column; /* Impila elementi verticalmente */
-    align-items: center;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Larghezza massima del contenuto */
-    padding: 0 20px;
-    box-sizing: border-box;
-    flex-wrap: wrap; /* Permette agli elementi di andare a capo su schermi piccoli */
-}
-
-.logo-link {
-    text-decoration: none;
-    color: inherit; /* Mantiene il colore del testo ereditato dall'header */
-}
-
-header h1 {
-    font-family: 'Montserrat', sans-serif; /* Font più audace per il titolo */
-    margin: 0;
-    font-size: 2em;
-    flex-shrink: 0;
-    margin-right: 20px; /* Spazio a destra del titolo */
-}
-
-/* --- Navigazione Principale --- */
-.main-nav {
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 10px; /* Spazio tra header-content e nav */
-    text-align: center;
-}
-
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Flexbox per i link */
-    justify-content: center; /* Centra i link */
-    flex-wrap: wrap; /* Permette ai link di andare a capo */
-}
-
-.main-nav li {
-    margin: 0 15px;
-}
-
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: #a0d8ff; /* Colore più chiaro al passaggio del mouse */
-}
-
-/* --- Stili Barra di Ricerca --- */
-.search-bar {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
-    flex-grow: 1;
-    margin-top: 10px; /* Spazio se va a capo */
-}
-
-.search-bar input[type="text"] {
-    flex-grow: 1;
-    padding: 10px 15px;
-    border: 1px solid #003d80;
-    border-radius: 25px;
-    font-size: 0.9em;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-bar input[type="text"]:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-}
-
-.search-bar button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    white-space: nowrap;
-}
-
-.search-bar button[type="submit"]:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
-}
-
-/* --- Main Content Layout --- */
-main {
-    max-width: 1200px;
-    margin: 40px auto; /* Centra il contenuto principale */
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-section {
-    background-color: white;
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Il testo delle sezioni è allineato a sinistra */
-}
-
-section h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #0056b3;
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center; /* Titoli delle sezioni centrati */
-}
-
-section p, section ul {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-section ul {
-    list-style: disc;
-    margin-left: 20px;
-}
-
-/* --- Sezione Hero (Banner Iniziale) --- */
-#hero {
-    text-align: center;
-    background-color: #e9ecef; /* Sfondo leggermente diverso */
-    padding: 60px 40px;
-}
-
-#hero h2 {
-    font-size: 2.5em;
-    color: #004085;
-    margin-bottom: 25px;
-}
-
-#hero p {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    font-size: 1.2em;
-}
-
-/* --- Product Grid --- */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonne adattive */
-    gap: 30px; /* Spazio tra le schede */
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px); /* Effetto al passaggio del mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-}
-
-.product-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #0056b3;
-    font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.product-card p {
-    font-size: 0.95em;
-    color: #555;
-    min-height: 50px; /* Per mantenere l'altezza uniforme */
-}
-
-/* --- Stili Pulsanti --- */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    text-decoration: none; /* Per i link che sembrano pulsanti */
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    margin: 5px; /* Spazio tra pulsanti */
-}
-
-.btn-primary {
-    background-color: #007bff; /* Blu principale */
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
-}
-
-.btn-secondary {
-    background-color: #6c757d; /* Grigio secondario */
-    color: white;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-    transform: translateY(-1px);
-}
-
-/* Il pulsante nel div di esempio dell'HTML precedente, rinominato */
-button#exploreProductsButton {
-    background-color: #28a745; /* Verde accattivante */
-}
-
-button#exploreProductsButton:hover {
-    background-color: #218838;
-}
-
-/* --- Footer --- */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-footer a {
-    color: #a0d8ff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* --- Media Queries per la Responsività --- */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start; /* Allinea a sinistra su schermi piccoli */
+// Aggiungiamo un "listener" al pulsante principale
+exploreProductsButton.addEventListener('click', function() {
+    if (isOriginalText) {
+        dynamicMessageParagraph.textContent = 'Scopri come le nostre innovazioni stanno ridefinendo il mercato! Sfoglia la nostra gamma completa di prodotti e soluzioni all\'avanguardia.';
+        exploreProductsButton.textContent = 'Torna alla presentazione iniziale';
+        // In un sito reale, qui potresti aggiungere uno scroll alla sezione #products
+        // document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    } else {
+        dynamicMessageParagraph.textContent = 'Siamo leader nello sviluppo di tecnologie all\'avanguardia, creando soluzioni che ridefiniscono gli standard del settore e migliorano la vita di ogni giorno.';
+        exploreProductsButton.textContent = 'Esplora i Nostri Prodotti';
     }
+    // Invertiamo lo stato per il prossimo click
+    isOriginalText = !isOriginalText;
+});
 
-    header h1 {
-        font-size: 1.5em;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
 
-    .search-bar {
-        margin-top: 10px;
-        width: 100%; /* Occupa tutta la larghezza */
-        max-width: none; /* Rimuove max-width */
-    }
-    
-    .main-nav ul {
-        flex-direction: column; /* Links impilati */
-        margin-top: 15px;
-    }
+// --- Script OPZIONALE per la barra di ricerca ---
+// Questa parte è solo un esempio di come potresti iniziare
+// a gestire la ricerca se avessi del contenuto da filtrare
+// o un backend per la ricerca.
 
-    .main-nav li {
-        margin: 5px 0;
-    }
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.querySelector('.search-bar button[type="submit"]');
 
-    section {
-        padding: 25px;
+// Esempio: ascolta il click sul pulsante di ricerca
+searchButton.addEventListener('click', function() {
+    const searchTerm = searchInput.value.trim(); // .trim() rimuove spazi bianchi iniziali/finali
+    if (searchTerm !== '') {
+        alert('Innovatech Solutions - Hai cercato: "' + searchTerm + '".\nIn un sito reale, qui verrebbero mostrati i risultati della ricerca!');
+        // Qui dovresti implementare la logica di ricerca vera e propria:
+        // 1. Filtrare elementi nella pagina (es. schede prodotto)
+        // 2. Inviare una richiesta a un backend per i risultati di ricerca
+        // 3. Reindirizzare a una pagina dei risultati di ricerca (es. search.html?q=termine)
+    } else {
+        alert('Per favore, inserisci un termine di ricerca per Innovatech Solutions.');
     }
+});
 
-    section h2 {
-        font-size: 1.8em;
+// Esempio: ascolta il tasto Invio nell'input di ricerca
+searchInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Impedisce il submit di un form se l'input fosse in un <form>
+        searchButton.click(); // Simula un click sul pulsante di ricerca
     }
+});
 
-    #hero h2 {
-        font-size: 2em;
-    }
-    #hero p {
-        font-size: 1em;
-    }
-    
-    .product-grid {
-        grid-template-columns: 1fr; /* Una colonna su schermi piccoli */
-    }
-}
 
-@media (max-width: 480px) {
-    .header-content, main {
-        padding: 0 15px;
-    }
+// --- Script per lo Smooth Scrolling (se hai la navigazione con link interni) ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    .search-bar input, .search-bar button {
-        font-size: 0.85em;
-        padding: 8px 15px;
-    }
-
-    .btn-primary, .btn-secondary, button#exploreProductsButton {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
