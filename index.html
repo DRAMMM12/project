@@ -3,48 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un esempio pratico che dimostra l'interazione tra HTML, CSS e JavaScript, ora con una barra di ricerca.">
-    <meta name="keywords" content="HTML, CSS, JavaScript, sviluppo web, esempio, interattività, ricerca, frontend">
-    <meta name="author" content="Il Tuo Nome Cognome">
-    <title>Interazione Web: Esempio con Barra di Ricerca</title>
+    <meta name="description" content="Innovatech Solutions: Leader nello sviluppo di soluzioni tecnologiche all'avanguardia per un futuro migliore. Esplora i nostri prodotti e servizi innovativi.">
+    <meta name="keywords" content="Innovatech Solutions, tecnologia, innovazione, soluzioni, prodotti, servizi, azienda, qualità, futuro, ricerca e sviluppo">
+    <meta name="author" content="Innovatech Solutions Team">
+    <title>Innovatech Solutions - Soluzioni Tecnologiche Innovative per il Futuro</title>
     
     <link rel="stylesheet" href="style.css">
     
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    
     <header>
         <div class="header-content">
-            <h1>Interazione Web</h1>
-            <nav class="search-bar">
-                <label for="searchInput" class="sr-only">Cerca nel sito</label>
-                <input type="text" id="searchInput" placeholder="Cerca qui...">
-                <button type="submit" aria-label="Esegui ricerca">Cerca</button>
+            <a href="index.html" class="logo-link">
+                <h1>Innovatech Solutions</h1> 
+            </a>
+            <nav class="search-bar" aria-label="Ricerca nel sito">
+                <label for="searchInput" class="sr-only">Cerca prodotti o soluzioni</label>
+                <input type="text" id="searchInput" placeholder="Cerca i nostri prodotti...">
+                <button type="submit" aria-label="Avvia ricerca">Cerca</button>
             </nav>
         </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#about">Chi Siamo</a></li>
+                <li><a href="#products">Prodotti</a></li>
+                <li><a href="#services">Servizi</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section aria-labelledby="introHeading">
-            <h2 id="introHeading" class="sr-only">Introduzione all'esempio</h2>
-            <p id="dynamicMessage">Questo esempio illustra in modo conciso come HTML, CSS e JavaScript si combinano per creare esperienze web interattive.</p>
+        <section id="hero" aria-labelledby="heroHeading">
+            <h2 id="heroHeading">Il Futuro Inizia Qui. Innovazione al Tuo Servizio.</h2>
+            <p>Siamo leader nello sviluppo di tecnologie all'avanguardia, creando soluzioni che ridefiniscono gli standard del settore e migliorano la vita di ogni giorno.</p>
             
-            <button type="button" id="toggleButton" aria-live="polite">Attiva Interazione</button>
+            <button type="button" id="exploreProductsButton" aria-live="polite">Esplora i Nostri Prodotti</button>
         </section>
-        
-        </main>
+
+        <section id="about" aria-labelledby="aboutHeading">
+            <h2 id="aboutHeading">Chi Siamo</h2>
+            <p><strong>Innovatech Solutions</strong> è un pioniere nel campo delle soluzioni tecnologiche. Con decenni di esperienza e un team di ingegneri e designer visionari, ci dedichiamo alla ricerca e sviluppo per offrire prodotti che non solo soddisfano, ma anticipano le esigenze del mercato globale. La nostra missione è semplice: trasformare idee complesse in realtà accessibili e funzionali per tutti.</p>
+            <p>Dall'automazione industriale all'intelligenza artificiale, le nostre innovazioni sono progettate per garantire efficienza, sicurezza e sostenibilità. Collaboriamo con i nostri clienti per creare soluzioni personalizzate che generano un impatto reale e duraturo.</p>
+        </section>
+
+        <section id="products" aria-labelledby="productsHeading">
+            <h2 id="productsHeading">I Nostri Prodotti di Punta</h2>
+            <p>Scopri la gamma completa delle nostre soluzioni all'avanguardia, progettate per rispondere alle sfide del presente e del futuro.</p>
+            
+            <div class="product-grid">
+                <article class="product-card">
+                    <h3>Smart AI Assistant</h3>
+                    <p>Un assistente basato su intelligenza artificiale per ottimizzare le operazioni quotidiane della tua azienda.</p>
+                    <a href="#" class="btn-primary">Scopri di più</a>
+                </article>
+
+                <article class="product-card">
+                    <h3>Eco-Monitor Pro</h3>
+                    <p>Sistema avanzato per il monitoraggio ambientale e l'ottimizzazione del consumo energetico.</p>
+                    <a href="#" class="btn-primary">Scopri di più</a>
+                </article>
+
+                <article class="product-card">
+                    <h3>Quantum Secure Network</h3>
+                    <p>La prossima generazione di protezione dati, basata su crittografia quantistica per la massima sicurezza.</p>
+                    <a href="#" class="btn-primary">Scopri di più</a>
+                </article>
+            </div>
+            <button type="button" class="btn-secondary">Vedi tutti i prodotti</button>
+        </section>
+
+        <section id="services" aria-labelledby="servicesHeading">
+            <h2 id="servicesHeading">I Nostri Servizi</h2>
+            <p>Oltre ai prodotti, offriamo una vasta gamma di servizi di consulenza, implementazione e supporto tecnico.</p>
+            <ul>
+                <li>Consulenza Strategica e Pianificazione</li>
+                <li>Sviluppo Soluzioni Personalizzate</li>
+                <li>Installazione e Integrazione Sistemi</li>
+                <li>Supporto Tecnico e Manutenzione 24/7</li>
+                <li>Formazione e Workshop Specializzati</li>
+            </ul>
+            <button type="button" class="btn-primary">Richiedi una Consulenza</button>
+        </section>
+
+        <section id="contact" aria-labelledby="contactHeading">
+            <h2 id="contactHeading">Contattaci</h2>
+            <p>Hai domande sui nostri prodotti o servizi? Desideri una dimostrazione o un preventivo personalizzato? Non esitare a contattarci.</p>
+            <address>
+                <strong>Innovatech Solutions S.p.A.</strong><br>
+                Via dell'Innovazione, 10<br>
+                20100 Milano, Italia<br>
+                Email: <a href="mailto:info@innovatech.com">info@innovatech.com</a><br>
+                Telefono: <a href="tel:+390212345678">+39 02 1234 5678</a>
+            </address>
+            <p>Compila il modulo sottostante per essere ricontattato:</p>
+            <button type="button" class="btn-secondary">Vai al Modulo di Contatto</button>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&copy; 2025 Il Tuo Nome/Azienda. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Innovatech Solutions S.p.A. Tutti i diritti riservati.</p>
+        <p><a href="#">Informativa sulla Privacy</a> | <a href="#">Termini di Servizio</a></p>
     </footer>
 
     <script src="script.js" defer></script>
