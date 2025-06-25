@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un esempio pratico che dimostra l'interazione tra HTML, CSS e JavaScript, ora con una barra di ricerca.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, sviluppo web, esempio, interattività, ricerca, frontend">
+    <meta name="author" content="Il Tuo Nome Cognome">
+    <title>Interazione Web: Esempio con Barra di Ricerca</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    </head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Interazione Web</h1>
+            <nav class="search-bar">
+                <label for="searchInput" class="sr-only">Cerca nel sito</label>
+                <input type="text" id="searchInput" placeholder="Cerca qui...">
+                <button type="submit" aria-label="Esegui ricerca">Cerca</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="introHeading">
+            <h2 id="introHeading" class="sr-only">Introduzione all'esempio</h2>
+            <p id="dynamicMessage">Questo esempio illustra in modo conciso come HTML, CSS e JavaScript si combinano per creare esperienze web interattive.</p>
+            
+            <button type="button" id="toggleButton" aria-live="polite">Attiva Interazione</button>
+        </section>
+        
+        </main>
+
+    <footer>
+        <p>&copy; 2025 Il Tuo Nome/Azienda. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
